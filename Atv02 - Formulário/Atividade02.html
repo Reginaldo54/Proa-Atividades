@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atv Formulário</title>
+    <link rel="stylesheet" href="Atividade02.css" type="text/css">
+</head>
+<body>
+
+    <section>
+        <fieldset>
+            <legend>Formulário</legend>
+            
+            <form action="#" method="post" enctype="multipart/form-data" novalidate target="_blank">
+
+                <label for="nModifica">Notificação:</label>
+                <input type="text" name="nModifica" value="Boa Tarde, Pessoal!" readonly draggable="true"> <br><br>
+    
+                <label for="nome">Nome*:</label>
+                <input type="text" name="nome" placeholder="Insira nome" autofocus size="60" required autocomplete="on"> <br><br>
+                
+                <label for="idade">Idade: </label>
+                <input type="number" min = "17" max = "30" step="4"> <br><br>
+                
+                <label for="genero">Genero:</label>
+                <select name="genero">
+                    <option value="" selected>Selecione seu genero</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="Outros">Outros</option>
+                </select> <br><br>
+    
+                <label for="cpf">Cpf: </label>
+                <input type="text" name="cpf" maxlength="14"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2} size="60" autocomplete="on"  placeholder="Insira cpf" > <br><br>
+                
+                <label for="data">Data de Nascimento:</label>
+                <input type="date" name="data" placeholder="Quando vc nasceu?" size="60"> <br><br>
+              
+                <label for="nomeMae">Nome da Mãe:</label>
+                <input type="text" name="nomeMae" placeholder="Qual o nome da sua mãe?" size="60"> <br><br>
+                
+                <label for="nomePai">Nome da Pai:</label>
+                <input type="text" name="nomePai" placeholder="Qual o nome da seu pai?" size="60"> <br><br>
+                
+                <label for="nome">Endereço:</label>
+                <input type="text" name="nome" placeholder="Insira endereço" size="60"> <br><br>
+                    
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Insira o email" size="60"> <br><br>
+                
+                <label for="curso">Curso:</label>
+                <input type="text" name="curso" placeholder="Insira nome do curso" size="60"> <br><br>
+                
+                <label for="cor">Cor Favorita: </label>
+                <input type="color" name="cor">  <br><br>
+                
+               
+                <button><a href="https://www.google.com.br/" target="_blank">Clica ai</button></a>
+               
+
+              <!-- <img src="" id="imagemMostrada" width="200px"> --> 
+                
+                <Button type="submit">Enviar</Button>
+    
+            </form>
+        </fieldset>
+        
+
+    </section>
+    <div id="imagePreview"></div>
+    
+</body>
+</html>
