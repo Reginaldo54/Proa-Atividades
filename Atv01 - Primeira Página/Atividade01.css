@@ -1,0 +1,72 @@
+html
+{
+    scroll-behavior: smooth;
+}
+
+html, body {
+    background-color: rgb(245, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#content
+{
+    background-color: azure;
+    margin-top: 75px;
+}
+
+.linha-horizontal
+{
+    list-style: none;
+    padding: 0;
+}
+
+.linha-horizontal li
+{
+    display: inline;
+    margin-right: 20px;
+}
+
+a
+{
+    color: red;
+}
+
+.menu
+{
+    margin-left: 50px;
+
+    color: black;
+}
+
+
+  
+
+.menu nav
+{
+    margin-left: 150px;
+}
+
+
+nav.ul
+{
+    display: flexbox;
+    flex-direction: row;
+
+}
+
+.imgs
+{
+    margin-left: 35px;
+}
+
+footer ul
+{
+    list-style: none;
+}
+
+#rodape
+{
+    background-color:rgb(220, 235, 235);
+}
