@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetas</title>
+</head>
+<body>
+
+    <!--
+        Crie uma array de planetas que inclua "Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"  e,
+         em seguida, peça ao usuário para digitar o nome de um planeta. 
+        Verifique se o planeta que o usuário informou está na array e informe ao usuário.
+    -->
+
+    <script>
+        
+        // Array com nomes de planetas
+        const planetas = ["Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno", "Mercúrio", "Netuno", "Urano"];    
+        
+        //Inicia o programa
+        function IniciarPrograma()
+        {
+            let input = NomePlaneta();
+        
+            while(input != "pare")
+            {
+
+                if(input != null)
+                {
+                    // Atualizando o valor
+                    let arrayPlanetas = ProcurandoPlaneta(input);
+                    
+                    // Se o array não estiver vázio, imprima os planetas:
+                    if(arrayPlanetas != null)
+                    {
+                        MostrarPlanetas(arrayPlanetas);
+                        
+                        alert("Saindo do programa...");
+                        input = "pare";
+                    }
+                    // Se não encontrou o nome... pedir para digitar outra coisa?
+                    else
+                    {
+
+                        input = NomePlaneta();
+                    }
+                }
+                else
+                {
+                    alert("Saindo do programa...");
+                    input = "pare";
+                }
+            }
+            
+        }
+
+        // Auxilia no input do nome do planeta
+        function NomePlaneta()
+        {    
+            let formato = /^[a-zA-Z]+$/;
+            
+            while(!formato.test(input) || input == undefined)
+            {
+               var input = prompt("Insira o nome de um planeta (Formato de Uma palavra): ");
+               
+                if(input == null)
+                {
+                    return null;
+                }
+            }
+
+            alert(input);
+            return input;
+        }
+
+        // Procura o nome digitado no array com os nomes dos planetas (retorna array)
+        function ProcurandoPlaneta(input)
+        {
+            
+            input = input.toLowerCase();
+            
+            let planetasEncotrados = [];
+            let pos = 0;
+
+            for(let i = 0; i < planetas.length; i++)
+            {
+                let planeta = planetas[i].toLowerCase();
+                
+                if(planeta.includes(input))
+                {
+                    
+                    // guardando o planeta encontrado no array dos planetas encontrados.
+                    planetasEncotrados[pos] = planetas[i];
+                    pos++;
+                }
+            }
+
+            // Retornar alert quando n tem nada. 
+            if(planetasEncotrados.length == 0)
+            {
+                alert("Planeta não foi encontrado.")
+                return null;
+            } 
+            else return planetasEncotrados; // esqueci de retornar antes...
+        }
+
+        // Mostra todos os planetas encontrados pela função ProcurandoPlaneta (recebe array)
+        function MostrarPlanetas(arrayPlanetas)
+        {
+            let texto = `Planetas encontrados com '${input}':` ;
+            for(let i = 0; i < arrayPlanetas.length; i++)
+            {
+                texto += `\n ${arrayPlanetas[i]}`; 
+            }
+
+            return alert(texto);
+        }
+
+    </script>
+</body>
+</html>
