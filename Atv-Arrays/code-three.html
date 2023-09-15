@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+Vamos criar uma lista de compras. 
+
+Crie uma array de frutas, exiba-a ao usuário e, em seguida, peça ao usuário para digitar o nome de uma das frutas.
+
+Caso a fruta esteja no array, remova-a e exiba a mensagem "Fruta foi retirada da lista". 
+
+Peça novamente para o usuário digitar o nome de uma fruta para ser removida. 
+
+Sempre que o usuário procurar por uma fruta que não está no array exiba a mensagem "Fruta indisponível no nosso mercado". 
+
+Quando o array não possuir mais itens dentro de si, escreva "Lista de compras finalizada".
+    -->
+
+    <script>
+        const listaDeCompras = ['Maçã', 'Banana', 'Laranja', 'Morango','Pêssego',
+                                'Uva', 'Pera', 'Abacaxi'];
+
+
+        
+        IniciarPrograma();
+
+        function IniciarPrograma()
+        {
+            while(listaDeCompras.length !== 0)
+            {
+                ReceberFrutaDigitada();
+            }
+
+            alert("Lista de compras finalizada");
+            
+        }   
+        
+        function ExibirListaDeCompras(mostrar = false)
+        {
+            let imprimir = "Lista de Compras: ";
+
+            let pos = 1;
+            for (const item of listaDeCompras) 
+            {
+                imprimir += `\nItem ${pos}: ${item}`;
+                pos++;
+            }
+
+            if(mostrar)
+            {
+                alert(imprimir);
+            }
+            else return imprimir;
+        }
+
+        function ReceberFrutaDigitada()
+        {
+            //Guardando o retorno do exibirlista para por junto com o input
+            let mostrar = ExibirListaDeCompras(); // formato retorna valor
+            
+            let frutaEscolhida = prompt("Digite o nome de uma das frutas na lista de compras abaixo: " + `\n${mostrar}`);
+            
+            RemoverFruta(frutaEscolhida);
+
+            //ExibirListaDeCompras(true); // formato mostra valor
+
+        }
+
+        function RemoverFruta(fruta)
+        {
+            // Deixando o input em lowercase
+            fruta = fruta.toLowerCase();
+
+            // Passando pelos items na lista de compra
+            for (const item of listaDeCompras) 
+            {
+                
+                // Guardando o nome da fruta em LowerCase
+                let itemArray = item.toLowerCase();
+                
+                // Verificando se a fruta dada aqui.
+                if(itemArray === fruta)
+                {
+                    // Pegando a posição da fruta no array
+                    let indexFruta = listaDeCompras.indexOf(item);
+
+                    // Retirando a fruta do array.
+                    listaDeCompras.splice(indexFruta, 1);
+                    
+                    // Mostrando Mensagem que a fruta foi removida da lista de compras
+                    return alert(`A ${itemArray} foi retirada da lista`);
+                }    
+            }
+
+            return alert("Fruta indisponível no nosso mercado");
+        }
+    </script>
+
+
+</body>
+</html>
