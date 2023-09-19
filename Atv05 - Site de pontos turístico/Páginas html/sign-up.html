@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../Css/login.css">
+    <link rel="stylesheet" href="../Css/content.css">
+    <link rel="stylesheet" href="../Css/aid.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+    <div class="cadastro">
+        <main>
+            <h1 class="alterah1">Faça seu Cadastro</h1>
+            
+            <fieldset class="sombra-box">
+                <form action="sign-up-sucess.html" autocomplete="on" onsubmit="CadastroRealizado()">  
+                
+                    <fieldset class="mt-10 sombra-box">
+                        <legend class="inp"> <h3> Informações Pessoais</h3></legend><br>
+                        <label for="nickname:" class="inputs">Apelido:</label> <br>
+                        <input type="text" name="nickname" required placeholder="Insira um apelido" size="20" class="inputs"> <br>
+                        
+                        <label for="name" class="inputs">Nome: </label> <br>
+                        <input type="text" name="name" required placeholder="Insira seu nome" size="20" class="inputs"> <br>
+            
+                        <label for="sunname" class="inputs">Sobrenome: </label> <br>
+                        <input type="text" name="sunname" required placeholder="Insira seu nome" size="20" class="inputs"> <br> 
+    
+                        <label for="age" class="inputs">Idade: </label><br>
+                        <input type="number" min="12" name="age" placeholder="Insira a sua idade" size="20" class="inputs"> <br><br>
+    
+                        <div id="spans">   
+                            <label for="public-name">Tornar seu nome real público?</label> <br> <br>
+                            <span> Sim <input type="radio" name="public-name" required value="Sim"></span>
+                            <span> Não <input type="radio" name="public-name" required value="Não"><br></span> 
+                            <br>
+                            
+                            <label for="public-age">Tornar idade pública?</label> <br> <br>
+                            <span> Sim <input type="radio" name="public-age" required value="Sim"></span>
+                            <span> Não <input type="radio" name="public-age" required value="Não"></span>
+                            <br>
+                        </div>
+                      
+                    </fieldset>     <br>    
+                 
+    
+                    <fieldset class="sombra-box">
+                        <legend><h3>Informações de login</h3></legend><br>
+    
+                        <label for="email" class="inputs">Email: </label><br>
+                        <input type="email" name="email" required placeholder="Insira o seu email" size="20" class="inputs"> <br>
+            
+                        <label for="confirme-email" class="inputs">Confirmação de Email: </label><br>
+                        <input type="confirme-email" name="email" required placeholder="Confirme seu email" size="20" class="inputs"> <br>
+            
+                        <label for="password" class="inputs">Senha:</label><br>
+                        <input type="password" name="password" required placeholder="Insira a senha" size="20" class="inputs"> <br>
+                        
+                        <label for="password" class="inputs">Confirme a Senha:</label><br>
+                        <input type="password" name="password" required placeholder="Insira a senha novamente" size="20" class="inputs"> <br>
+                    </fieldset> <br>
+                 
+        
+                    <button type="submit" class="btn-solido mb-10" id="button-sign">Cadastrar</button>
+                </form>
+            </fieldset>
+            
+        </main>
+    </div>
+ 
+   
+
+    <script src="../Js/notificacoes.js"></script>
+
+</body>
+</html>

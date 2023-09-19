@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atv 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Atividade de pesquisa css</h1>
+        <hr>
+    </header>
+
+    <main>
+        
+        <section>
+            <h2>Unidades de medida</h2>
+            <h3>Absoluto</h3>
+            <p>
+                As unidades de medidas absolutas são fixas e o valor dado em qualquer uma delas será posto exatamente como foi dito.
+            </p>
+
+            <h3>Relativo</h3>
+            <p>Medidas relativas são medidas que fazem relação a uma medida já existente no css.</p>
+            <p>
+                <h4>em</h4>
+                <p>É realcionado ao tamanho da fonte do seu elemento pai (2em quer dizer 2 vezes o tamanho do tamanho da fonte atual) </p>
+
+                <h4>ex</h4>
+                <p>É relacionada a altura do caractere <strong>X</strong>, o valor exato da medida vai depender do tamanho da fonte atual.  <em>(Ele é raramente usado)</em></p>
+
+                <h4>ch</h4>
+                <p>É relacionada a largura do numero <strong>0</strong> (O valor exato dado é relativo ao tamanho da fonte tbm)</p>
+
+                <h4>rem</h4>
+                <p>É relacionado ao tamanho da fonte do elemento root (normalmente se refere ao elemento html) <br>
+                A principal característica do "rem" é que ele não é afetado pelas mudanças de tamanho da fonte nos elementos pais, ao contrário do "em", que é relativo ao tamanho da fonte do elemento pai imediato.	</p>
+
+                <h4>vw</h4>
+                <p>Relacionado à 1% da largura do viewport (largura da tela)</p>
+
+                <h4>vh</h4>
+                <p>Relacionado à 1% da altura do viewport (altura da tela)</p>
+
+                <h4>vmin</h4>
+                <p>Relacionado à 1% da menor dimensão do viewport (menor largura ou altura) <br>
+                    Menor Dimensão -> Se o Height = 100 e Width = 80, vmin vai pegar a menor dimensão, ou seja o width que é 80.</p>
+
+                <h4>vmax</h4>
+                <p>Relacionado à 1% da maior dimensão do viewport (Maior largura ou altura) <br>
+                    Maior Dimensão-> Se o Height = 100 e Width = 80, vmin vai pegar a maior dimensão, ou seja o height que é 100.</p>
+
+                <h4>%</h4>
+                <p>A medida % é relativa ao valor atual do elemento pai.<br> <br>
+                     Ex: Se eu tenho uma tag p dentro de uma tag section, a tag p é filha da tag section. <br>
+                     Se a tag section tem uma largura de 100px, e quero que a tag p apenas tenha 50px, posso apenas dizer: width = 50%; <br>
+                     Ele vai entender que é para tirar 50% do valor da tag pai, e dar a tag p. 
+</p>
+            </p>
+            
+            <a href="https://www.w3schools.com/cssref/css_units.php">Saíba mais sobre unidades de medida!</a>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Cores</h2>
+            <h3>Por nome</h3>
+            <p>
+                Podemos usar uma cor apenas com base no nome dela. Ex: white. Mas acaba que essa modalidade tem cores limitadas.
+                <br>Ex: <span style="color: blueviolet;">Cor preestabelicida</span>
+            </p>
+            <a href="https://www.w3schools.com/css/css_colors.asp">Saíba mais sobre cores por nomes!</a>
+
+            <h3>Hexadecimal</h3>
+            <p>
+                #rrggbb
+                Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255).
+                <span style="color: #fb0aab;">Uso da cor hexadecimal</span>
+            </p>
+            
+            <a href="https://www.w3schools.com/css/css_colors_hex.asp">Saíba mais sobre cores hexadecimais!</a>
+
+            <h3>RGB</h3>
+            <p>
+                Red Green Blue: É uma formula de geração de cores, usando as cores primarias vermelho verde e azul, usa valores entre 0 - 255
+               <br> ex:  <span style=" color: rgb(255, 255, 255); background-color: rgba( 100, 100,100, 1);">rgb(255, 255, 255) (É posto valores númericos de 0 a 255, nas 3 posições, que irá gerar uma cor) </span> 
+            </p>
+
+            <h3>RGBA</h3>
+            <p>
+                É o RGB com opacidade da cor, onde é usado valor em porcentagem, que vai determinar a transparência da cor <span style="color: rgba( 0, 0, 0, 60%);">(É mais visível colando uma imagem de background por trás)</span>
+            </p>
+            
+            <a href="https://www.w3schools.com/css/css_colors_rgb.asp">Saíba mais sobre cores RGB!</a>
+
+            <h3>HSL</h3>
+            <p>
+                Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue. <br>
+
+                Saturation is a percentage value. 0% means a shade of gray, and 100% is the full color. <br>
+
+                Lightness is also a percentage. 0% is black, 50% is neither light or dark, 100% is white <br><br>
+                
+                Ex: <span style="color: white; background-color: hwb(348 1% 95%);"> Mantix Satuação Brilho</span>
+            </p>
+
+            <h3>HSLA</h3>
+            <p>
+                hsla(hue, saturation, lightness, alpha) <br>
+
+                The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all): <br>
+                
+                <span style="color: white; background-color: hsl(0, 100%, 0%, 0.65);">- Fazer Uma página e estilizar a página com algumas coisas que foram pesquisadas. </span> 
+
+            </p>
+            
+            <a href="https://www.w3schools.com/css/css_colors_hsl.asp">Saíba mais sobre cores HSL!</a>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Propriedades de formatação de texto</h2>
+
+            <h3>Text Spacing</h3>
+            <p>
+                <h4> text-indent</h4>
+                <span>Indenta - Coloca um espaço, no inicio de um paragrafo, frase.</span>
+                <p style="text-indent: 50px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae impedit earum vero atque sapiente tempore doloremque ut, saepe dolor incidunt veniam dicta quo eligendi officiis? Perspiciatis provident soluta at qui.</p>
+
+                <h4> letter-spacing</h4>
+                <p>Decide o espaçamento entre as letras. <br> Ex:<span style="letter-spacing: 10px;"> Espaçamento de letra</span></p>
+
+                <h4> line-height</h4>
+                <p>Decide o espaçamento entre linhas <br> Ex:<div style="line-height: 50px;"> Espaçamento <br> de <br> linhas</div></p>
+
+                <h4> word-spacing</h4>
+                <p>Espaçamento entre palavras - Critério para reconhecer uma palavra -> uso do espaço <br> Ex:<span style="word-spacing: 10px;"> Espaçamento entre letras</span></p>
+
+                <h4> white-space</h4>
+                <p>Tira a quebra de linha padrão que ocorre quando o texto é mt grande. <br><span style="white-space: nowrap;"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem earum harum nam dolorum ut, non optio debitis! Necessitatibus iste vel doloribus? Repudiandae rerum possimus eveniet quae, soluta nihil quaerat expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestias doloremque ducimus, dignissimos aperiam impedit minima! Quod, rem odio illum hic dicta et quaerat pariatur amet minima itaque dolores repellendus?</span></p>
+               
+            </p>
+            
+            <a href="https://www.w3schools.com/css/css_text_spacing.asp">Saíba mais sobre Text Spacing</a>
+            <hr>
+
+            <h3>Text Shadow</h3>
+
+            <p>
+                Adiciona uma sombra ao texto (Estrutura: x, y, blur, cor ) <br>
+                Ex: <span style="color: white;
+                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Text Shadow</span>
+            </p>
+            <a href="https://www.w3schools.com/css/css_text_shadow.asp">Saíba mais sobre Text Shadow</a>
+            <hr>
+
+            <h3>Text Transform</h3>
+
+            <p>
+                <h4>UpperCase</h4>
+                <p> Deixa todas as letras em caixa alta. Ex: <span style="text-transform: uppercase;">Uso do uppercase</span></p>
+
+                <h4>LowerCase</h4>
+                <p> Deixa todas as letras em caixa baixa. Ex: <span style="text-transform: lowercase;">USO DO LOWER CASE</span></p>
+
+                <h4>UpperCase</h4>
+                <p> Deixa todas o inicio das palavras em maiúsculo. Ex: <span style="text-transform: capitalize;">uso do capitalize</span></p>
+
+                <h4>None</h4>
+                <p> Retira qualquer alteração do texto feita usado a propriedade text-transform. Ex: 
+                    <span style="text-transform: uppercase;">
+                         Antes do none, dps:
+                         <span style="text-transform: none;"> uso do none</span>
+                    </span></p>
+            </p>
+            
+            <a href="https://www.w3schools.com/css/css_text_transformation.asp">Saíba mais sobre Text Transform</a>
+            <hr>
+
+            <h3>Text Decoration</h3>
+            
+            <p>
+
+                <h4> text-decoration</h4>
+                <p> Define todas as propriedades do text-decoration em uma declaração</p>
+
+                <h4> text-decoration-line</h4>
+                <p> <span style=" text-decoration-line: overline;"> OverLine</span>
+                    <span style=" text-decoration-line: line-through;"> line-through</span>
+                    <span style=" text-decoration-line: underline;"> underline</span>
+                    <span style=" text-decoration-line: overline underline;"> overline underline</span></p>
+
+                <h4> text-decoration-color</h4>
+                <p style="text-decoration: overline underline purple;"> Uso da decoração de texto - cor: </p>
+
+                <h4> text-decoration-style</h4>
+                <p>
+                <span style=" text-decoration: underline solid;"> Linha solida</span> <br>
+                <span style=" text-decoration: underline tr;"> Linha dupla</span><br>
+                <span style=" text-decoration: underline dotted;"> Linha pontilhada</span><br>
+                <span style="text-decoration: underline dashed;"> Linha dashed</span><br>
+                <span style="text-decoration: underline wavy;"> Linha ondulada</span>
+                
+                    <span ></span>    
+                </p>
+                
+                <h4> text-decoration-thickness</h4>
+                <p style="text-decoration-thickness: 5px;">
+                    Grossura da linha colocada pelo CSS
+                </p>
+                
+                
+            </p>
+            
+            <a href="https://www.w3schools.com/css/css_text_decoration.asp">Saíba mais sobre Text Decoration</a>
+            <hr>
+
+        </section>
+    </main>
+
+  
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../Css/login.css">
+    <link rel="stylesheet" href="../Css/content.css">
+    <link rel="stylesheet" href="../Css/aid.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+    <div class="login">
+        <main>
+            <h1 class="alterah1">Faça seu Login</h1>
+            
+            <fieldset class="sombra-box">
+                <form action="main.html" autocomplete="on" onsubmit="LoginEfetuado()" id="form-login">
+                    <label for="email">Email: </label> <br>
+                    <input type="email" name="email" required placeholder="Insira o email"> <br>
+        
+                    <label for="password">Senha:</label><br>
+                    <input type="password" name="password" required placeholder="Insira a senha"> <br>
+
+                    <a href="forget-password.html" id="forget-pass">Esqueci a senha</a> <br>
+
+                    <div id="buttons">
+                        <button class="btn-solido mb-20" type="submit">Login</button >
+                        <button class="btn-solido mb-20" type="button" onclick="window.location.href = 'sign-up.html'">Cadastrar</button >
+                    </div>
+                   
+                </form>
+            </fieldset>
+            
+        </main>
+    </div>
+    
+    <script src="../Js/notificacoes.js"></script>
+</body>
+</html>

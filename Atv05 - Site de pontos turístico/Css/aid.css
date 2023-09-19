@@ -1,0 +1,186 @@
+
+body{
+    font-family: 'Roboto Slab', serif;
+    
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    margin: 0 200px;
+    padding: 4rem 2rem;
+    width: 800px;
+}
+
+
+.mb-5{
+    margin-bottom: 5px;
+}
+
+.mb-10{
+    margin-bottom: 10px;
+}
+
+.mb-15{
+    margin-bottom: 15px;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.mt-5{
+    margin-top: 5px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.mt-15{
+    margin-top: 15px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mx-5{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mx-10{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mx-15{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mx-20{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (min-width: 1280px) {
+    .cadastro {
+       width: 720px;
+       padding: 2rem;
+   }
+}
+
+@media screen and (max-width: 1190px) {
+    .content{
+        margin: 100px;
+    }
+}
+
+@media screen and (max-width: 1019px) {
+    .content{
+        margin: 0px;
+    }
+}
+
+
+
+@media screen and (max-width: 933px) {
+    .content{
+        width: 100%;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .login, .cadastro
+    {
+        width: 100%;
+        margin: 1rem;
+    }
+
+    h1{
+        font-size: 2.5rem;
+        margin-left: 100px;
+    }
+    .pontos-turisticos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 1.5rem;
+    }
+    
+    .alterah1
+    {
+        margin-left: 100px;
+        margin-bottom: 20px;
+    }
+
+
+}
+
+@media screen and (max-width: 706px)
+{
+    .login, .cadastro
+    {
+        width: 100%;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .alterah1
+    {
+        margin-left: 100px;
+        margin-bottom: 20px;
+    }
+
+    .center:nth-child(2)
+    {
+        margin-left: 100px;
+        width: 300px;
+    }
+
+    .center:nth-child(1)
+    {
+        font-size: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 516px) {
+    .login, .cadastro{
+        width: 100%;
+        padding: 1rem 0.1rem;
+        margin: 1rem auto;
+        margin-left: -400px;
+    }
+
+    .pontos-turisticos{
+        display: flex;
+        flex-direction: column;
+    }
+    .center:nth-child(2)
+    {
+        margin-left: 100px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 315px)
+{
+    .center:nth-child(2)
+    {
+        margin-left: 100px;
+        width: 200px;
+    }
+
+    .center:nth-child(1)
+    {
+        font-size: 2rem;
+    }
+}

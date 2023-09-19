@@ -1,0 +1,12 @@
+
+a{
+    color: blueviolet;
+}
+
+
+@media (min-width: 1000px)
+{
+    a{
+        color:red;
+    }
+}
