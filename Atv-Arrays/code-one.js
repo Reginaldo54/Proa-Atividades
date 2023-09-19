@@ -1,7 +1,8 @@
 
 
 let estudantesCadastrados = [];
-            
+
+// Função que cria Alunos.            
 function Estudante(nome, idade, matricula)
 {
     this.Nome      = nome;
@@ -9,11 +10,11 @@ function Estudante(nome, idade, matricula)
     this.Matricula = matricula;
 }
 
-
+// Cadastro manual - 
 const aluno1 = new Estudante("Reginaldo Alves", 21, "24.24.24");
 const aluno2 = new Estudante("Raphaela Pereira", 24, "23.23.22");
 
-
+// Inserindo alunos no array de estudantes
 estudantesCadastrados.push(aluno1);
 estudantesCadastrados.push(aluno2);
 
@@ -26,8 +27,19 @@ function IniciandoPrograma()
     {
         
         // Recebendo input do usuário
-         var user_input = parseInt(prompt("Cadastro de Usuário: \n\n 1 - Cadastrar Estudante \n 2 - Pesquisar Estudante \n 3 - Listar Estudantes \n 4 - Finalizar e Mostrar Estudantes")); 
-        
+         var user_input = prompt("Cadastro de Usuário: \n\n 1 - Cadastrar Estudante \n 2 - Pesquisar Estudante \n 3 - Listar Estudantes \n 4 - Finalizar e Mostrar Estudantes"); 
+         
+         // Verificando o valor dado pelo usuário. Se null, ele cancelou o prompt
+         if(user_input == null)
+         {
+            user_input = 4;
+            alert("Finalizando o programa....");
+         }
+         else
+         {
+            user_input = parseInt(user_input);
+         }
+
         // Opções
         switch(user_input)
         {
@@ -46,23 +58,184 @@ function IniciandoPrograma()
             case 4:
                 alert("Finalizando o programa....\n Mostrando os estudantes cadastrados");
                     ListarEstudante();
+                    console.log(estudantesCadastrados)
             break;
 
             // Caso nenhuma opção anterior...
             default:
+                
+                // Quando o usuário cancela o prompt, é retornando 'NaN' No a Number.
                 if(isNaN(user_input))
                 {
-                    user_input = 4;
-                    alert("Finalizando o programa....");
+                    alert('Não insira letras, insira um número entre 1 à 4');
                     continue;
                 }
+
                 alert("Insira Um número que se relacione as opções dadas.");
                 continue;
-                break;
+            break;
         }
     }
     
 }
+
+
+
+//#region Funções que decidem a qualidade do input de dados do estudante pelo usuário. 
+    
+    function SetName()
+    {
+        let input = prompt("Insira Nome:");
+        
+        // Definindo Formatação do input
+        let formato = /^[A-Z][a-z]+\s[A-Z][a-z]+$/
+        
+        if(input == null)
+        {
+            alert("Cancelando Cadastramento...");    
+            return null;
+        }
+        
+        // Enquanto o formato não estiver certo
+        while(!formato.test(input))
+        {
+            // Continue testando
+            input = prompt("Insira o nome no formato 'Nome Sobrenome':");
+            
+            if(input == null)
+            {
+                alert("Cancelando Cadastramento...");
+                
+                return null;
+            }
+        }
+
+        return input;    
+    }
+
+    function SetIdade()
+    {
+        
+        let input = prompt("Insira Idade:");
+                
+        // Checando se o valor no input não é inteiro.
+        while(!Number.isInteger(input) || input <= 0 || input > 100)
+        {
+                
+                    
+            if(input == null)
+            {
+                return null;
+            }
+            else
+            {
+                // Passando o valor do input para inteiro
+                input = parseInt(input);
+            }
+
+            
+            
+            if(isNaN(input))
+            {
+                input = prompt("Não insira letras ou deixe o input vázio, insira uma idade entre 1 e 100"); 
+            }
+            // Input foi menor ou igual a 0
+            else if(input <= 0)
+            {
+                input = prompt("Insira um valor maior ou igual a 1 para a idade:");
+            }
+
+            // O input foi maior que 100
+            else if(input > 100)
+            {
+                input = prompt("Insira um valor menor que 100 ou igual a 100 para a idade:");
+            }
+            // O input não é inteiro...
+            else if(!Number.isInteger(input))
+            {       
+                // Pedir valor, até inserir a idade com númemros
+                input = prompt("Insira um valor inteiro na Idade:");
+            }
+
+        }
+
+        return input;
+    }
+
+
+    function SetMatricula()
+    {
+        let input = MatriculaFormato();
+            
+        if(input != null)
+        {
+            // Não pode registrar...
+            while(!podeRegistrar)
+            {
+                var podeRegistrar = PodeRegistrarMatricula(input);
+                // Pode registrar a matricula
+                if(podeRegistrar)
+                {
+                    alert("Matricula Registrada");
+                    return input;
+                }
+                // Não pode registrar
+                else
+                {
+                    // Caso não achar
+                    alert("A matricula já cadastrada, Tente insirir outra");
+                    continue;   
+                }
+            }
+        }
+    }
+
+    function MatriculaFormato()
+    {
+        
+        let input = prompt("Insira Matricula: ");
+        
+        if(input == null)
+        {
+            alert("Cancelando Cadastramento...");
+            return null;
+        }
+        const formato = /^\d{2}\.\d{2}\.\d{2}$/
+
+        // Enquanto o formato digitado pelo usuário estiver errado, peça para digitar novamente.
+        while(!formato.test(input))
+        {   
+            input = prompt("Insira Matricula no formato xx.xx.xx onde x é um número: ");
+            if(input == null)
+            {
+                alert("Cancelando Cadastramento...");
+                return null;
+            }
+        }
+        return input;
+    }
+
+
+    function PodeRegistrarMatricula(input)
+    {
+        // Passando pelo array
+        for(let i = 0; i < estudantesCadastrados.length; i++)
+        {
+            // Verificando se a matricula existe já
+            if(estudantesCadastrados[i].Matricula === input)
+            {
+                // Não Pode cadastrar.
+                return false;
+            }
+        }
+
+        // Pode cadastrar, pq não tem mais nenhuma
+        return true; 
+
+    }
+
+//#endregion
+
 
 
 //#region Funções do Programa
@@ -193,140 +366,10 @@ function IniciandoPrograma()
             pos++;
         }
 
+        
+
         alert(info)
             
-    }
-
-//#endregion
-
-//#region Funções que decidem a qualidade do input de dados do estudante pelo usuário. 
-    
-    function SetName()
-    {
-        let input = prompt("Insira Nome:");
-        
-        let formato = /^[A-Z][a-z]+\s[A-Z][a-z]+$/
-        if(input == null)
-        {
-            return null;
-        }
-        // Enquanto o formato não estiver certo
-        while(!formato.test(input))
-        {
-            // Continue testando
-            
-            input = prompt("Insira Nome no formato Nome Sobrenome:");
-            
-            if(input == null)
-            {
-                return alert("Cancelando Cadastramento...");
-            }
-        }
-
-        return input;    
-    }
-
-    function SetIdade()
-    {
-        let input = parseInt(prompt("Insira Idade:"));
-        
-        // Checando se o valor no input não é inteiro.
-        while(!Number.isInteger(input) || input <= 0 || input > 100)
-        {
-            if(isNaN(input))
-            {
-                return null; 
-            }
-            // Input foi menor ou igual a 0
-            else if(input <= 0)
-            {
-                input = parseInt(prompt("Insira um valor maior que 0 para a idade:"));
-            }
-
-            // O input foi maior que 100
-            else if(input > 100)
-            {
-                input = parseInt(prompt("Insira um valor menor que 100 ou igual a 100 para a idade:"));
-            }
-            // O input não é inteiro...
-            else if(!Number.isInteger(input))
-            {       
-                // Pedir valor, até inserir a idade com númemros
-                input = parseInt(prompt("Insira um valor inteiro na Idade:"));
-            }
-
-        }
-
-        return input;
-    }
-
-    function MatriculaFormato()
-    {
-        
-        let input = prompt("Insira Matricula: ");
-        if(input == null)
-        {
-            return null;
-        }
-        const formato = /^\d{2}\.\d{2}\.\d{2}$/
-
-        // Enquanto o formato digitado pelo usuário estiver errado, peça para digitar novamente.
-        while(!formato.test(input))
-        {   
-            input = prompt("Insira Matricula no formato xx.xx.xx onde x é um número: ");
-            if(input == null)
-            {
-                return alert("Cancelando Cadastramento...");
-            }
-        }
-        return input;
-    }
-
-    function SetMatricula()
-    {
-        let input = MatriculaFormato();
-            
-        if(input != null)
-        {
-            // Não pode registrar...
-            while(!podeRegistrar)
-            {
-                var podeRegistrar = PodeRegistrarMatricula(input);
-                // Pode registrar a matricula
-                if(podeRegistrar)
-                {
-                    alert("Matricula Registrada");
-                    return input;
-                }
-                // Não pode registrar
-                else
-                {
-                    // Caso não achar
-                    alert("A matricula já cadastrada, Tente insirir outra");
-                    continue;   
-                }
-            }
-        }
-    }
-
-    function PodeRegistrarMatricula(input)
-    {
-        // Passando pelo array
-        for(let i = 0; i < estudantesCadastrados.length; i++)
-        {
-            // Verificando se a matricula do objeto correponde ao input
-
-            // Verificando se a matricula existe já
-            if(estudantesCadastrados[i].Matricula === input)
-            {
-                // Não Pode cadastrar.
-                return false;
-            }
-        }
-
-        // Pode cadastrar, pq não tem mais nenhuma
-        return true; 
-
     }
 
 //#endregion

@@ -18,12 +18,17 @@
         // Array com nomes de planetas
         const planetas = ["Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno", "Mercúrio", "Netuno", "Urano"];    
         
+        let input_user;
+
+        IniciarPrograma();
         //Inicia o programa
+
         function IniciarPrograma()
         {
             let input = NomePlaneta();
-        
-            while(input != "pare")
+            input_user = input;
+
+            while(input.toLowerCase() != "pare")
             {
 
                 if(input != null)
@@ -70,7 +75,6 @@
                 }
             }
 
-            alert(input);
             return input;
         }
 
@@ -102,13 +106,15 @@
                 alert("Planeta não foi encontrado.")
                 return null;
             } 
-            else return planetasEncotrados; // esqueci de retornar antes...
+
+            else return planetasEncotrados; 
         }
 
         // Mostra todos os planetas encontrados pela função ProcurandoPlaneta (recebe array)
         function MostrarPlanetas(arrayPlanetas)
         {
-            let texto = `Planetas encontrados com '${input}':` ;
+            let texto = `Planetas encontrados com '${input_user}':` ;
+
             for(let i = 0; i < arrayPlanetas.length; i++)
             {
                 texto += `\n ${arrayPlanetas[i]}`; 
