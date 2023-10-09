@@ -1,0 +1,82 @@
+input
+{
+    padding: 0.4rem;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: left;
+    transition: 0.2s;
+    border-color: rgb(76, 74, 74);
+}
+
+input:hover{
+    scale: 1.02;
+    transition: 0.3s;
+}
+
+h3
+{
+    margin-top: -20px;
+}
+
+#color
+{
+    color:wheat;
+}
+
+button
+{
+    margin-top: 10px;
+    padding: 0.35rem;
+    border-radius: 6px;
+    transition: 0.4s;
+}
+
+button:hover
+{
+    background-color: #586395;
+    color: white;
+    transition: 0.55s;
+    cursor: pointer;
+    scale: 1.1;
+}
+
+#tocavel:hover
+{
+    color: rgb(91, 9, 9);
+    background-color: antiquewhite;;
+    transition: 0.5s;
+    margin-top: 50px;
+
+}
+
+body{
+    background-color: #001260;
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center; 
+   
+}
+
+
+.login-container
+{
+    background-color: rgb(245, 235, 235);
+    position: fixed;
+    top: 25vh;
+    border: solid rgb(0, 0, 0) 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+
+    transition: 0.5s;
+    
+}
+
